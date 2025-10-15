@@ -663,8 +663,15 @@ Storytelling will highlight the rich history of the school, showcase its activit
 The user experience will be intuitive, featuring clear navigation and strategically placed call-to-action buttons for important forms and content.
 Colégio Dom Diogo de Sousa, renowned for its outstanding private education, will be presented in a way that reinforces its status as a national reference in academic excellence.
 
-Cores: #be0811 (Milano Red), #022c71 (Midnight Blue), #e9bb01 (Corn)
-Tipo de letra: Montserrat;
+Color palette: #F8F2E8; #E8BA02; #960A23 (Primary/Main); #BD9745; #0B2C70; #1C1C1E
+This translation reflects the values and color symbolism for a private school website, as described:
+The color burgundy on the website conveys tradition, prestige, and trust, reflecting the institution’s professionalism and excellence.
+At the same time, it creates a welcoming and sophisticated environment, enhancing the school’s identity and reinforcing its reputation as a reference in quality education.
+Gold symbolizes prestige, sophistication, and tradition, further strengthening the institution’s reputation for excellence.
+Yellow brings energy, optimism, and creativity, creating a stimulating and engaging learning environment for students, parents, and the school community.
+Blue is the main and predominant color in the logo, representing calm, serenity, security, and trust.
+
+Font-family: Montserrat;
 
 Use the lucide-vue-next and simple-icons package instead of svgs for icons
 Use Portuguese (Portugal) for all text

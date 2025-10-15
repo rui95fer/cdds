@@ -10,7 +10,7 @@ const modules = [Autoplay, Pagination, Navigation];
 </script>
 
 <template>
-    <div class="h-[calc(100vh-88px)] min-h-[500px] sm:min-h-[600px]">
+    <div class="h-screen min-h-[500px] sm:min-h-[600px]">
         <Swiper
             :modules="modules"
             :slides-per-view="1"
@@ -23,7 +23,7 @@ const modules = [Autoplay, Pagination, Navigation];
                 clickable: true,
                 bulletClass: 'swiper-pagination-bullet !bg-white/50',
                 bulletActiveClass:
-                    'swiper-pagination-bullet-active !bg-[#e9bb01]',
+                    'swiper-pagination-bullet-active !bg-[#E8BA02]',
             }"
             :navigation="false"
             :loop="true"
@@ -31,127 +31,197 @@ const modules = [Autoplay, Pagination, Navigation];
         >
             <!-- Slide 1: Boas-vindas -->
             <SwiperSlide>
-                <div
-                    class="relative flex h-full items-center justify-center sm:justify-start bg-cover bg-center bg-no-repeat"
-                    :style="{ backgroundImage: 'url(/cdds.jpg)' }"
+                <section
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    aria-label="Bem-vindos ao Colégio Dom Diogo de Sousa"
                 >
+                    <!-- Background Image with Zoom Animation -->
+                    <div
+                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        :style="{ backgroundImage: 'url(/slide1.webp)' }"
+                        aria-hidden="true"
+                    ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
-                    <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+                    <div
+                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                    >
                         <!-- Content -->
                         <div
-                            class="flex max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl flex-col items-center sm:items-start text-center sm:text-left text-white mx-auto sm:mx-0"
+                            class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 sm:mb-6 font-[Montserrat] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-bold"
+                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
                             >
                                 Bem-vindos ao<br />
-                                <span class="text-[#e9bb01]"
+                                <span class="mt-1 block text-[#E8BA02]"
                                     >Colégio Dom Diogo de Sousa</span
                                 >
                             </h1>
                             <p
-                                class="mb-6 sm:mb-8 font-[Montserrat] text-base sm:text-lg md:text-xl leading-relaxed"
+                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
                             >
-                                Uma instituição de referência que molda o futuro dos
-                                nossos alunos com excelência e dedicação.
+                                Uma instituição de referência que molda o futuro
+                                dos nossos alunos com excelência e dedicação há
+                                mais de 50 anos.
                             </p>
-                            <button
-                                class="group inline-flex items-center gap-2 rounded-md bg-[#890c25] px-6 sm:px-8 py-3 sm:py-4 font-[Montserrat] text-base sm:text-lg font-semibold text-white transition-all hover:bg-[#a00710] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2"
+                            <div
+                                class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
-                                Descubra Mais
-                                <ChevronRight
-                                    class="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1"
-                                />
-                            </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Descubra mais sobre o colégio"
+                                >
+                                    Descubra Mais
+                                    <ChevronRight
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5"
+                                        aria-hidden="true"
+                                    />
+                                </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Ver vídeo de apresentação"
+                                >
+                                    Ver Vídeo
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </SwiperSlide>
 
             <!-- Slide 2: Excelência Académica -->
             <SwiperSlide>
-                <div
-                    class="relative flex h-full items-center justify-center sm:justify-start bg-cover bg-center bg-no-repeat"
-                    :style="{ backgroundImage: 'url(/cdds.jpg)' }"
+                <section
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    aria-label="Excelência Académica"
                 >
+                    <!-- Background Image with Zoom Animation -->
+                    <div
+                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        :style="{ backgroundImage: 'url(/slide2.webp)' }"
+                        aria-hidden="true"
+                    ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
-                    <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+                    <div
+                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                    >
                         <!-- Content -->
                         <div
-                            class="flex max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl flex-col items-center sm:items-start text-center sm:text-left text-white mx-auto sm:mx-0"
+                            class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 sm:mb-6 font-[Montserrat] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-bold"
+                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
                             >
-                                <span class="text-[#e9bb01]">Excelência</span><br />
+                                <span class="block text-[#E8BA02]"
+                                    >Excelência</span
+                                >
                                 Académica
                             </h1>
                             <p
-                                class="mb-6 sm:mb-8 font-[Montserrat] text-base sm:text-lg md:text-xl leading-relaxed"
+                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
                             >
-                                Oferecemos um ensino de qualidade superior com metodologias
-                                inovadoras que preparam os nossos alunos para os desafios do futuro.
+                                Oferecemos um ensino de qualidade superior com
+                                metodologias inovadoras que preparam os nossos
+                                alunos para os desafios do futuro.
                             </p>
-                            <button
-                                class="group inline-flex items-center gap-2 rounded-md bg-[#890c25] px-6 sm:px-8 py-3 sm:py-4 font-[Montserrat] text-base sm:text-lg font-semibold text-white transition-all hover:bg-[#a00710] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2"
+                            <div
+                                class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
-                                Conheça o Nosso Ensino
-                                <ChevronRight
-                                    class="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1"
-                                />
-                            </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Conheça o nosso ensino"
+                                >
+                                    Conheça o Nosso Ensino
+                                    <ChevronRight
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5"
+                                        aria-hidden="true"
+                                    />
+                                </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Ver cursos disponíveis"
+                                >
+                                    Ver Cursos
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </SwiperSlide>
 
             <!-- Slide 3: Vida Escolar -->
             <SwiperSlide>
-                <div
-                    class="relative flex h-full items-center justify-center sm:justify-start bg-cover bg-center bg-no-repeat"
-                    :style="{ backgroundImage: 'url(/cdds.jpg)' }"
+                <section
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    aria-label="Uma Comunidade Vibrante"
                 >
+                    <!-- Background Image with Zoom Animation -->
+                    <div
+                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        :style="{ backgroundImage: 'url(/slide3.webp)' }"
+                        aria-hidden="true"
+                    ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
-                    <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12">
+                    <div
+                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                    >
                         <!-- Content -->
                         <div
-                            class="flex max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-2xl flex-col items-center sm:items-start text-center sm:text-left text-white mx-auto sm:mx-0"
+                            class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 sm:mb-6 font-[Montserrat] text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight font-bold"
+                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
                             >
                                 Uma Comunidade<br />
-                                <span class="text-[#e9bb01]">Vibrante</span>
+                                <span class="mt-1 block text-[#E8BA02]"
+                                    >Vibrante</span
+                                >
                             </h1>
                             <p
-                                class="mb-6 sm:mb-8 font-[Montserrat] text-base sm:text-lg md:text-xl leading-relaxed"
+                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
                             >
-                                Proporcionamos um ambiente acolhedor onde cada aluno
-                                desenvolve não só conhecimentos, mas também valores e amizades para toda a vida.
+                                Proporcionamos um ambiente acolhedor onde cada
+                                aluno desenvolve não só conhecimentos, mas
+                                também valores e amizades para toda a vida.
                             </p>
-                            <button
-                                class="group inline-flex items-center gap-2 rounded-md bg-[#890c25] px-6 sm:px-8 py-3 sm:py-4 font-[Montserrat] text-base sm:text-lg font-semibold text-white transition-all hover:bg-[#a00710] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2"
+                            <div
+                                class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
-                                Explore a Vida Escolar
-                                <ChevronRight
-                                    class="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1"
-                                />
-                            </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Explore a vida escolar"
+                                >
+                                    Explore a Vida Escolar
+                                    <ChevronRight
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5"
+                                        aria-hidden="true"
+                                    />
+                                </button>
+                                <button
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    aria-label="Ver actividades extracurriculares"
+                                >
+                                    Ver Actividades
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </SwiperSlide>
         </Swiper>
     </div>
@@ -223,7 +293,7 @@ const modules = [Autoplay, Pagination, Navigation];
 
 :deep(.swiper-button-next:hover),
 :deep(.swiper-button-prev:hover) {
-    background: rgba(233, 187, 1, 0.9) !important;
+    background: rgba(232, 186, 2, 0.9) !important;
     transform: scale(1.1) !important;
 }
 
@@ -236,5 +306,20 @@ const modules = [Autoplay, Pagination, Navigation];
     :deep(.swiper-button-prev) {
         left: 0.5rem !important;
     }
+}
+
+/* Animation keyframes */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.25);
+    }
+}
+
+/* Animation class */
+.animate-zoom {
+    animation: zoomIn 20s ease-in-out infinite alternate;
 }
 </style>

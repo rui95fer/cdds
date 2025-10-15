@@ -1,129 +1,111 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { Menu, Search } from 'lucide-vue-next';
-import { siFacebook, siInstagram, siX } from 'simple-icons/icons';
+import { Menu } from 'lucide-vue-next';
+import { onMounted, onUnmounted, ref } from 'vue';
+
+// Reactive state
+const isScrolled = ref(false);
+
+// Navigation data
+const navigationLinks = [
+    { href: '/', label: 'Início' },
+    { href: '/courses', label: 'Cursos' },
+    { href: '/about', label: 'Sobre' },
+];
+
+const secondaryNavigationLinks = [
+    { href: '/pages', label: 'Páginas' },
+    { href: '/blogs', label: 'Blogues' },
+    { href: '/contacts', label: 'Contactos' },
+];
+
+// Dynamic CSS classes based on scroll state
+const getButtonClasses = () => {
+    const baseClasses =
+        'flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2';
+    if (isScrolled.value) {
+        return `${baseClasses} text-gray-700 hover:bg-gray-100 hover:text-[#960A23] focus:ring-[#960A23] focus:ring-offset-white`;
+    }
+    return `${baseClasses} text-white hover:bg-white/10 hover:text-[#E8BA02] focus:ring-[#E8BA02] focus:ring-offset-transparent`;
+};
+
+const getNavLinkClasses = () => {
+    const baseClasses =
+        'text-base font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md px-4 py-3';
+    if (isScrolled.value) {
+        return `${baseClasses} text-gray-700 hover:text-[#960A23] focus:ring-[#960A23] focus:ring-offset-white`;
+    }
+    return `${baseClasses} text-white hover:text-[#E8BA02] focus:ring-[#E8BA02] focus:ring-offset-transparent`;
+};
+
+// Scroll detection
+const handleScroll = () => {
+    isScrolled.value = window.scrollY > 50;
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+    // Check initial scroll position
+    handleScroll();
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <template>
-    <header class="bg-[#890c25] py-4 sm:py-6 font-[Montserrat]">
-        <div class="mx-auto flex w-full max-w-7xl items-center px-4 sm:px-6">
-            <!-- Mobile Layout: Logo + Hamburger (visible on mobile only) -->
-            <div class="flex w-full items-center justify-between lg:hidden">
-                <Link href="/" class="flex-shrink-0">
-                    <img
-                        src="/logo.png"
-                        alt="Logótipo do Colégio Dom Diogo de Sousa"
-                        class="h-12 w-auto sm:h-14"
-                    />
+    <header
+        :class="[
+            'fixed top-0 right-0 left-0 py-3 font-[Montserrat] transition-all duration-300 sm:py-4',
+            isScrolled
+                ? 'z-[100] border-b border-gray-200/50 bg-white/95 shadow-md backdrop-blur-md'
+                : 'z-50 bg-transparent',
+        ]"
+    >
+        <div
+            class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        >
+            <!-- Logo: Left -->
+            <Link href="/" class="flex-shrink-0">
+                <img
+                    :src="isScrolled ? '/logo.webp' : '/logo-monocromatic.webp'"
+                    alt="Logótipo do Colégio Dom Diogo de Sousa"
+                    :class="[
+                        'w-auto transition-all duration-300',
+                        isScrolled
+                            ? 'h-10 sm:h-12 lg:h-14'
+                            : 'h-12 sm:h-16 lg:h-16',
+                    ]"
+                />
+            </Link>
+
+            <!-- Desktop Navigation: Right -->
+            <nav
+                class="hidden items-center gap-6 lg:flex xl:gap-8"
+                aria-label="Navegação principal"
+            >
+                <Link
+                    v-for="link in [
+                        ...navigationLinks,
+                        ...secondaryNavigationLinks,
+                    ]"
+                    :key="link.href"
+                    :href="link.href"
+                    :class="getNavLinkClasses()"
+                >
+                    {{ link.label }}
                 </Link>
-                <div class="flex items-center gap-2">
-                    <!-- Search icon (mobile) -->
-                    <button
-                        aria-label="Pesquisar"
-                        class="flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] active:bg-white/20"
-                    >
-                        <Search :size="20" />
-                    </button>
-                    <!-- Hamburger icon (mobile) -->
-                    <button
-                        aria-label="Menu"
-                        class="flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] active:bg-white/20"
-                    >
-                        <Menu :size="20" />
-                    </button>
-                </div>
-            </div>
+            </nav>
 
-            <!-- Desktop Layout (hidden on mobile) -->
-            <div class="hidden w-full lg:flex lg:items-center">
-                <!-- Social icons: left (hidden on tablet, visible on desktop) -->
-                <nav class="hidden xl:flex items-center gap-3">
-                    <a
-                        href="https://facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        class="flex h-9 w-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] [&>svg]:h-4 [&>svg]:w-4 [&>svg]:fill-current [&>svg]:transition-colors"
-                        v-html="siFacebook.svg"
-                    >
-                    </a>
-                    <a
-                        href="https://x.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X"
-                        class="flex h-9 w-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] [&>svg]:h-4 [&>svg]:w-4 [&>svg]:fill-current [&>svg]:transition-colors"
-                        v-html="siX.svg"
-                    >
-                    </a>
-                    <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        class="flex h-9 w-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] [&>svg]:h-4 [&>svg]:w-4 [&>svg]:fill-current [&>svg]:transition-colors"
-                        v-html="siInstagram.svg"
-                    >
-                    </a>
-                </nav>
-
-                <!-- Logo and navigation: center -->
-                <div class="flex flex-1 justify-center">
-                    <div class="flex items-center gap-8 xl:gap-12">
-                        <nav class="flex items-center gap-6 lg:gap-8">
-                            <Link
-                                href="/"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Início</Link
-                            >
-                            <Link
-                                href="/courses"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Cursos</Link
-                            >
-                            <Link
-                                href="/about"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Sobre</Link
-                            >
-                        </nav>
-                        <Link href="/" class="flex-shrink-0">
-                            <img
-                                src="/logo.png"
-                                alt="Logótipo do Colégio Dom Diogo de Sousa"
-                                class="h-14 w-auto xl:h-16"
-                            />
-                        </Link>
-                        <nav class="flex items-center gap-6 lg:gap-8">
-                            <Link
-                                href="/pages"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Páginas</Link
-                            >
-                            <Link
-                                href="/blogs"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Blogues</Link
-                            >
-                            <Link
-                                href="/contacts"
-                                class="text-base font-medium text-white transition-colors hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25] rounded px-2 py-1"
-                                >Contactos</Link
-                            >
-                        </nav>
-                    </div>
-                </div>
-
-                <!-- Search icon: right (desktop only) -->
-                <div class="flex items-center">
-                    <button
-                        aria-label="Pesquisar"
-                        class="flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 hover:text-[#e9bb01] focus:outline-none focus:ring-2 focus:ring-[#e9bb01] focus:ring-offset-2 focus:ring-offset-[#890c25]"
-                    >
-                        <Search :size="20" />
-                    </button>
-                </div>
-            </div>
+            <!-- Menu toggle (mobile only) -->
+            <button
+                aria-label="Abrir menu"
+                :class="getButtonClasses()"
+                class="lg:hidden"
+            >
+                <Menu :size="18" />
+            </button>
         </div>
     </header>
 </template>
