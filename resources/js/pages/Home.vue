@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import AboutUs from '@/components/AboutUs.vue';
+import Blog from '@/components/Blog.vue';
+import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import HeroCarousel from '@/components/HeroCarousel.vue';
-import AboutUs from '@/components/AboutUs.vue';
 import Partners from '@/components/Partners.vue';
+import Quote from '@/components/Quote.vue';
 </script>
 
 <template>
@@ -12,8 +15,9 @@ import Partners from '@/components/Partners.vue';
     </div>
     <AboutUs />
     <Partners />
+    <Blog />
+    <Quote />
+    <Footer />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

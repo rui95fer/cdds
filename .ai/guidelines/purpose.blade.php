@@ -18,4 +18,4 @@ Font-family: Montserrat;
 Use the lucide-vue-next and simple-icons package instead of svgs for icons
 Use Portuguese (Portugal) for all text
 The logo from the Colégio Dom Diogo de Sousa is in the public folder as logo.png
-There in not dark mode, only light mode
+Do not add dark mode support
