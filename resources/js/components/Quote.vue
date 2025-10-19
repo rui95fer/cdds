@@ -46,7 +46,7 @@ withDefaults(defineProps<QuoteProps>(), {
                     <!-- Quote -->
                     <blockquote>
                         <p
-                            class="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-[#0B2C70] italic text-center lg:text-left"
+                            class="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-[#1C1C1E] italic text-center lg:text-left"
                             style="font-family: Georgia, serif;"
                         >
                             "{{ quote }}"
@@ -58,17 +58,16 @@ withDefaults(defineProps<QuoteProps>(), {
 
                     <!-- Author Credit -->
                     <footer
-                        class="group flex flex-col items-center gap-3 rounded transition focus-within:ring-2 focus-within:ring-[#E8BA02] lg:flex-row lg:items-center lg:justify-start"
-                        tabindex="0"
+                        class="group flex flex-col items-center gap-3 rounded transition lg:flex-row lg:items-center lg:justify-start"
                         aria-label="Autor da citação"
                     >
                         <cite class="flex flex-col not-italic text-center lg:text-left">
                             <span
-                                class="text-base font-semibold text-[#0B2C70]"
+                                class="text-base font-semibold text-[#1C1C1E]"
                             >
                                 {{ authorName }}
                             </span>
-                            <span class="mt-0.5 text-sm text-[#0B2C70]/60">
+                            <span class="mt-0.5 text-sm text-[#1C1C1E]/60">
                                 {{ authorRole }}
                             </span>
                         </cite>

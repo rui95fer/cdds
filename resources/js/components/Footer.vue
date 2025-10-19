@@ -341,7 +341,7 @@ const isQuickLinksOpen = ref(false);
                     class="flex flex-col items-center justify-center text-center gap-4 sm:flex-row sm:justify-between sm:items-center sm:text-left"
                 >
                     <p class="text-[#F8F2E8]/80">
-                        Copyright © {{ currentYear }} Colégio Dom Diogo de Sousa | Todos os direitos reservados
+                        Copyright © {{ currentYear }} | Todos os direitos reservados
                     </p>
 
                     <nav aria-label="Links legais" class="flex items-center gap-4">
