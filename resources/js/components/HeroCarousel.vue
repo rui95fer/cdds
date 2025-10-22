@@ -10,7 +10,7 @@ const modules = [Autoplay, Pagination, Navigation];
 </script>
 
 <template>
-    <div class="h-screen min-h-[500px] sm:min-h-[600px]">
+    <div class="hero-container min-h-[500px] sm:min-h-[600px]">
         <Swiper
             :modules="modules"
             :slides-per-view="1"
@@ -228,18 +228,41 @@ const modules = [Autoplay, Pagination, Navigation];
 </template>
 
 <style scoped>
-/* Animation keyframes */
+/* Animation keyframes - Safari optimized */
 @keyframes zoomIn {
     0% {
-        transform: scale(1);
+        transform: scale(1) translateZ(0);
     }
     100% {
-        transform: scale(1.25);
+        transform: scale(1.15) translateZ(0);
     }
 }
 
-/* Animation class */
+/* Animation class - with Safari hardware acceleration */
 .animate-zoom {
     animation: zoomIn 20s ease-in-out infinite alternate;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+/* Safari backdrop-filter fix */
+.backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+/* Safari h-screen fix - handles iOS address bar */
+.hero-container {
+    height: 100vh;
+    height: 100svh; /* Safari 15.4+ supports small viewport height */
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari specific fix */
+    .hero-container {
+        height: -webkit-fill-available;
+    }
 }
 </style>

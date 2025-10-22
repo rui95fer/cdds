@@ -16,6 +16,13 @@ const partners = [
     { name: 'Parceiro 11', logo: '/11.webp' },
     { name: 'Parceiro 12', logo: '/12.webp' },
     { name: 'Parceiro 13', logo: '/13.webp' },
+    { name: 'Parceiro 24', logo: '/24.webp' },
+    { name: 'Parceiro 25', logo: '/25.webp' },
+    { name: 'Parceiro 26', logo: '/26.webp' },
+    { name: 'Parceiro 27', logo: '/27.webp' },
+    { name: 'Parceiro 28', logo: '/28.webp' },
+    { name: 'Parceiro 29', logo: '/29.webp' },
+
 ];
 
 // Double the partners array for seamless looping

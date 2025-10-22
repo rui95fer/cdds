@@ -94,33 +94,6 @@ onUnmounted(() => {
             </p>
           </div>
 
-          <!-- Program Links -->
-          <div class="space-y-4">
-            <div class="flex items-start gap-4 group cursor-pointer">
-              <div class="w-1 h-12 bg-burgundy mt-1"></div>
-              <div>
-                <h3 class="font-semibold text-navy text-lg group-hover:text-burgundy transition-colors">
-                  Ensino Secundário
-                </h3>
-                <p class="text-gray-500 text-sm">
-                  Descubra os nossos cursos de Ensino Secundário
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 group cursor-pointer">
-              <div class="w-1 h-12 bg-burgundy mt-1"></div>
-              <div>
-                <h3 class="font-semibold text-navy text-lg group-hover:text-burgundy transition-colors">
-                  Ensino Básico
-                </h3>
-                <p class="text-gray-500 text-sm">
-                  Explore os nossos programas de Ensino Básico
-                </p>
-              </div>
-            </div>
-          </div>
-
           <!-- CTA Button -->
           <div class="pt-4">
             <button class="inline-flex items-center gap-3 bg-burgundy text-white px-8 py-4 rounded-full font-semibold hover:bg-burgundy-dark transition-all duration-300 group">
