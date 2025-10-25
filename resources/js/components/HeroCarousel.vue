@@ -236,6 +236,11 @@ const modules = [Autoplay, Pagination, Navigation];
     height: auto;
     display: flex;
     flex-direction: column;
+    /* Safari flickering fix - forces hardware acceleration properly */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .swiper-slide-fix section {
@@ -249,6 +254,8 @@ const modules = [Autoplay, Pagination, Navigation];
     transform-style: preserve-3d;
     -webkit-transform: translate3d(0, 0, 0);
     -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Animation keyframes - Safari optimized */
