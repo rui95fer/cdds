@@ -11,10 +11,8 @@ import Quote from '@/components/Quote.vue';
 </script>
 
 <template>
-    <div class="min-h-screen bg-white">
-        <Header />
-        <HeroCarousel />
-    </div>
+    <Header />
+    <HeroCarousel />
     <AboutUs />
     <Partners />
     <Blog />

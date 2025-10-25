@@ -32,23 +32,23 @@ const modules = [Autoplay, Pagination, Navigation];
             <!-- Slide 1: Boas-vindas -->
             <SwiperSlide>
                 <section
-                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden safari-stacking"
                     aria-label="Bem-vindos ao Colégio Dom Diogo de Sousa"
                 >
                     <!-- Background Image with Zoom Animation -->
                     <div
-                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-zoom"
                         :style="{ backgroundImage: 'url(/slide1.webp)' }"
                         aria-hidden="true"
                     ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        class="absolute inset-0 z-[1] bg-gradient-to-r from-black/85 via-black/65 to-black/20"
                         aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
                     <div
-                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                        class="relative z-[2] mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
                     >
                         <!-- Content -->
                         <div
@@ -88,23 +88,23 @@ const modules = [Autoplay, Pagination, Navigation];
             <!-- Slide 2: Excelência Académica -->
             <SwiperSlide>
                 <section
-                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden safari-stacking"
                     aria-label="Excelência Académica"
                 >
                     <!-- Background Image with Zoom Animation -->
                     <div
-                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-zoom"
                         :style="{ backgroundImage: 'url(/slide2.webp)' }"
                         aria-hidden="true"
                     ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        class="absolute inset-0 z-[1] bg-gradient-to-r from-black/85 via-black/65 to-black/20"
                         aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
                     <div
-                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                        class="relative z-[2] mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
                     >
                         <!-- Content -->
                         <div
@@ -144,23 +144,23 @@ const modules = [Autoplay, Pagination, Navigation];
             <!-- Slide 3: Vida Escolar -->
             <SwiperSlide>
                 <section
-                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden"
+                    class="relative flex h-full items-center justify-center bg-cover bg-center bg-no-repeat sm:justify-start overflow-hidden safari-stacking"
                     aria-label="Uma Comunidade Vibrante"
                 >
                     <!-- Background Image with Zoom Animation -->
                     <div
-                        class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom"
+                        class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-zoom"
                         :style="{ backgroundImage: 'url(/slide3.webp)' }"
                         aria-hidden="true"
                     ></div>
                     <!-- Gradient Overlay -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/20"
+                        class="absolute inset-0 z-[1] bg-gradient-to-r from-black/85 via-black/65 to-black/20"
                         aria-hidden="true"
                     ></div>
                     <!-- Content Container -->
                     <div
-                        class="relative z-10 mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
+                        class="relative z-[2] mx-auto -mt-8 w-full max-w-7xl px-4 sm:-mt-12 sm:px-6 lg:px-8"
                     >
                         <!-- Content -->
                         <div
@@ -201,6 +201,12 @@ const modules = [Autoplay, Pagination, Navigation];
 </template>
 
 <style scoped>
+/* Safari stacking context fix - prevents z-index issues during transitions */
+.safari-stacking {
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+}
+
 /* Animation keyframes - Safari optimized */
 @keyframes zoomIn {
     0% {
@@ -215,12 +221,8 @@ const modules = [Autoplay, Pagination, Navigation];
 .animate-zoom {
     animation: zoomIn 20s ease-in-out infinite alternate;
     will-change: transform;
-    -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
 }
 
 /* Safari backdrop-filter fix */
@@ -233,16 +235,13 @@ const modules = [Autoplay, Pagination, Navigation];
 .hero-container {
     height: 100vh;
     height: 100svh; /* Safari 15.4+ supports small viewport height */
-    height: fill-available;
     -webkit-font-smoothing: antialiased;
-    font-smooth: always;
 }
 
 @supports (-webkit-touch-callout: none) {
     /* iOS Safari specific fix */
     .hero-container {
         height: -webkit-fill-available;
-        height: fill-available;
     }
 }
 </style>
