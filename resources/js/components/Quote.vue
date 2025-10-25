@@ -16,7 +16,7 @@ withDefaults(defineProps<QuoteProps>(), {
 
 <template>
     <section
-        class="font-montserrat relative w-full overflow-hidden bg-white px-4 py-20 transition-colors duration-300"
+        class="font-[Montserrat] relative w-full overflow-hidden bg-white px-4 py-20 transition-colors duration-300"
         aria-label="Citação inspiradora"
     >
         <div class="relative z-10 mx-auto max-w-7xl">
@@ -46,7 +46,7 @@ withDefaults(defineProps<QuoteProps>(), {
                     <!-- Quote -->
                     <blockquote>
                         <p
-                            class="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-[#1C1C1E] italic text-center lg:text-left"
+                            class="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light italic text-dark text-center lg:text-left"
                             style="font-family: Georgia, serif;"
                         >
                             "{{ quote }}"
@@ -63,11 +63,11 @@ withDefaults(defineProps<QuoteProps>(), {
                     >
                         <cite class="flex flex-col not-italic text-center lg:text-left">
                             <span
-                                class="text-base font-semibold text-[#1C1C1E]"
+                                class="text-base font-semibold text-gray-900"
                             >
                                 {{ authorName }}
                             </span>
-                            <span class="mt-0.5 text-sm text-[#1C1C1E]/60">
+                            <span class="mt-0.5 text-sm text-gray-600">
                                 {{ authorRole }}
                             </span>
                         </cite>
@@ -79,13 +79,14 @@ withDefaults(defineProps<QuoteProps>(), {
 </template>
 
 <style scoped>
-.font-montserrat {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-/* Ensure proper text rendering for the quote */
+/* Only keep small, necessary CSS that Tailwind can't express easily */
 blockquote p {
     font-feature-settings:
         'liga' 1,
         'calt' 1;
+}
+
+.text-dark {
+    color: #1c1c1e;
 }
 </style>

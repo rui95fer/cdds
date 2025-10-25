@@ -14,10 +14,10 @@ import Quote from '@/components/Quote.vue';
     <Header />
     <HeroCarousel />
     <AboutUs />
+    <ExtracurricularActivities />
     <Partners />
     <Blog />
     <Quote />
-    <ExtracurricularActivities />
     <College />
     <Footer />
 </template>
