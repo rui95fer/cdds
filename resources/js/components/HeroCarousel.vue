@@ -243,14 +243,6 @@ const modules = [Autoplay, Pagination, Navigation];
     min-height: 100%;
 }
 
-/* Safari stacking context fix - prevents z-index issues during transitions */
-.safari-stacking {
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
 /* Animation keyframes - simplified for Safari */
 @keyframes zoomIn {
     0% {
@@ -264,8 +256,7 @@ const modules = [Autoplay, Pagination, Navigation];
 /* Animation class - Safari flickering fix applied */
 .animate-zoom {
     animation: zoomIn 20s ease-in-out infinite alternate;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    /* Apply Safari fixes without creating new stacking context */
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     will-change: transform;
@@ -292,6 +283,16 @@ const modules = [Autoplay, Pagination, Navigation];
     height: 100svh; /* Safari 15.4+ supports small viewport height */
     position: relative;
     overflow: hidden;
+    /* Force Safari to maintain layer order during transitions */
+    isolation: isolate;
+}
+
+/* Apply hardware acceleration to Swiper wrapper only */
+.hero-container :deep(.swiper) {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 @supports (-webkit-touch-callout: none) {
