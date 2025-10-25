@@ -243,7 +243,7 @@ const modules = [Autoplay, Pagination, Navigation];
     min-height: 100%;
 }
 
-/* Animation keyframes - simplified for Safari */
+/* Simple zoom animation without any hardware acceleration tricks */
 @keyframes zoomIn {
     0% {
         transform: scale(1);
@@ -253,50 +253,23 @@ const modules = [Autoplay, Pagination, Navigation];
     }
 }
 
-/* Animation class - Safari flickering fix applied */
 .animate-zoom {
     animation: zoomIn 20s ease-in-out infinite alternate;
-    /* Apply Safari fixes without creating new stacking context */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    will-change: transform;
 }
 
-/* Pause animation during Swiper transitions to prevent Safari flicker */
-:global(.swiper-slide-active) .animate-zoom {
-    animation-play-state: running;
-}
-
-:global(.swiper-slide:not(.swiper-slide-active)) .animate-zoom {
-    animation-play-state: paused;
-}
-
-/* Safari backdrop-filter fix */
+/* Backdrop blur */
 .backdrop-blur-sm {
-    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
 }
 
-/* Safari h-screen fix - handles iOS address bar */
+/* Container height */
 .hero-container {
     height: 100vh;
-    height: 100svh; /* Safari 15.4+ supports small viewport height */
     position: relative;
     overflow: hidden;
-    /* Force Safari to maintain layer order during transitions */
-    isolation: isolate;
-}
-
-/* Apply hardware acceleration to Swiper wrapper only */
-.hero-container :deep(.swiper) {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
 }
 
 @supports (-webkit-touch-callout: none) {
-    /* iOS Safari specific fix */
     .hero-container {
         height: -webkit-fill-available;
     }
