@@ -55,7 +55,7 @@ const modules = [Autoplay, Pagination, Navigation];
                             class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                class="mb-4 font-[Montserrat] text-xl leading-tight font-bold sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                             >
                                 Bem-vindos ao<br />
                                 <span class="mt-1 block text-[#E8BA02]"
@@ -63,7 +63,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 >
                             </h1>
                             <p
-                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
+                                class="mb-6 max-w-prose font-[Montserrat] text-sm leading-relaxed text-gray-100 sm:mb-8 sm:text-base md:text-lg lg:text-xl"
                             >
                                 Uma instituição de referência que molda o futuro
                                 dos nossos alunos com excelência e dedicação há
@@ -73,7 +73,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Descubra mais sobre o colégio"
                                 >
                                     Descubra Mais
@@ -83,7 +83,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                     />
                                 </button>
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Ver vídeo de apresentação"
                                 >
                                     Ver Vídeo
@@ -120,7 +120,7 @@ const modules = [Autoplay, Pagination, Navigation];
                             class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                class="mb-4 font-[Montserrat] text-xl leading-tight font-bold sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                             >
                                 <span class="block text-[#E8BA02]"
                                     >Excelência</span
@@ -128,7 +128,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 Académica
                             </h1>
                             <p
-                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
+                                class="mb-6 max-w-prose font-[Montserrat] text-sm leading-relaxed text-gray-100 sm:mb-8 sm:text-base md:text-lg lg:text-2xl"
                             >
                                 Oferecemos um ensino de qualidade superior com
                                 metodologias inovadoras que preparam os nossos
@@ -138,7 +138,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Conheça o nosso ensino"
                                 >
                                     Conheça o Nosso Ensino
@@ -148,7 +148,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                     />
                                 </button>
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Ver cursos disponíveis"
                                 >
                                     Ver Cursos
@@ -185,7 +185,7 @@ const modules = [Autoplay, Pagination, Navigation];
                             class="mx-auto flex max-w-xs flex-col items-center text-center text-white sm:mx-0 sm:max-w-lg sm:items-start sm:text-left md:max-w-xl lg:max-w-2xl"
                         >
                             <h1
-                                class="mb-4 font-[Montserrat] text-2xl leading-tight font-bold sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                class="mb-4 font-[Montserrat] text-xl leading-tight font-bold sm:mb-6 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                             >
                                 Uma Comunidade<br />
                                 <span class="mt-1 block text-[#E8BA02]"
@@ -193,7 +193,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 >
                             </h1>
                             <p
-                                class="mb-6 max-w-prose font-[Montserrat] text-base leading-relaxed text-gray-100 sm:mb-8 sm:text-lg md:text-xl lg:text-2xl"
+                                class="mb-6 max-w-prose font-[Montserrat] text-sm leading-relaxed text-gray-100 sm:mb-8 sm:text-base md:text-lg lg:text-2xl"
                             >
                                 Proporcionamos um ambiente acolhedor onde cada
                                 aluno desenvolve não só conhecimentos, mas
@@ -203,7 +203,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                 class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4"
                             >
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#960A23] px-6 py-3 font-[Montserrat] text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#960A23]/90 hover:shadow-xl focus:ring-2 focus:ring-[#E8BA02] focus:ring-offset-2 focus:ring-offset-black focus:outline-none active:scale-100 sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Explore a vida escolar"
                                 >
                                     Explore a Vida Escolar
@@ -213,7 +213,7 @@ const modules = [Autoplay, Pagination, Navigation];
                                     />
                                 </button>
                                 <button
-                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-lg"
+                                    class="group inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-[Montserrat] text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/20 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black focus:outline-none sm:px-8 sm:py-4 sm:text-base"
                                     aria-label="Ver actividades extracurriculares"
                                 >
                                     Ver Actividades
