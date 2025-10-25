@@ -236,11 +236,6 @@ const modules = [Autoplay, Pagination, Navigation];
     height: auto;
     display: flex;
     flex-direction: column;
-    /* Safari flickering fix - forces hardware acceleration properly */
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
 .swiper-slide-fix section {
@@ -250,32 +245,30 @@ const modules = [Autoplay, Pagination, Navigation];
 
 /* Safari stacking context fix - prevents z-index issues during transitions */
 .safari-stacking {
-    transform: translate3d(0, 0, 0);
-    transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-/* Animation keyframes - Safari optimized */
+/* Animation keyframes - simplified for Safari */
 @keyframes zoomIn {
     0% {
-        transform: scale(1) translate3d(0, 0, 0);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1.15) translate3d(0, 0, 0);
+        transform: scale(1.15);
     }
 }
 
-/* Animation class - optimized for Safari with hardware acceleration */
+/* Animation class - Safari flickering fix applied */
 .animate-zoom {
     animation: zoomIn 20s ease-in-out infinite alternate;
-    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
+    will-change: transform;
 }
 
 /* Pause animation during Swiper transitions to prevent Safari flicker */
@@ -297,7 +290,6 @@ const modules = [Autoplay, Pagination, Navigation];
 .hero-container {
     height: 100vh;
     height: 100svh; /* Safari 15.4+ supports small viewport height */
-    -webkit-font-smoothing: antialiased;
     position: relative;
     overflow: hidden;
 }
